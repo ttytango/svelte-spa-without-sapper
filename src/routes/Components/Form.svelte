@@ -1,5 +1,4 @@
 <script>
-import Login from './Login.svelte';
     function openPopUpAddition() {
         var x = Number(addOne.value);
         var y = Number(addTwo.value);
@@ -37,6 +36,8 @@ import Login from './Login.svelte';
     gap: 2px;
     grid-template-areas: inherit;  
     box-shadow: 2px 2px 8px grey;  
+    animation: animateappear 2.3s normal;
+
 }
 .inner-left,
 .inner-right {
@@ -108,6 +109,9 @@ button {
 }
 </style>
 <div class="grid">
+    <div class="inner" style="text-decoration: underline;">
+    <h3>Javascript fun!</h3>
+</div>
     <div class="inner-left">        
         <form id="additionForm">
             <label name="num">

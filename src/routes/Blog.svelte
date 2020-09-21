@@ -11,7 +11,7 @@ import { has_prop } from 'svelte/internal'
     data = await response.json()
   });
 </script>
-<Home />
+<!-- <Home /> -->
 
 <h1>Blog</h1>
 

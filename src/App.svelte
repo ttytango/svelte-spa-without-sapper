@@ -1,18 +1,17 @@
 <script>
+  // export let name;
 
 import router from "page";
 import Home from './routes/Home.svelte';
 import About from './routes/About.svelte';
 import Blog from './routes/Blog.svelte'
 import SingleBlog from './routes/SingleBlog.svelte'
-import Products from './routes/Products.svelte'
-import SingleProduct from './routes/SingleProduct.svelte'
+
 let page
 let params
 router('/', () => page = Home);
 router('/blog', () => (page = Blog))
 router('/about', () => (page = About))
-router('/products', () => (page = Products))
 
 router(
   '/blog/:id',
@@ -25,25 +24,11 @@ router(
   () => (page = SingleBlog)
 )
 
-router(
-  '/products/:id',
-
-  (ctx, next) => {
-    params = ctx.params
-    next()
-  },
-
-  () => (page = SingleProduct)
-)
 
 router.start();
 </script>
 
 
-
-
-	<!-- <h1>Hello {name}!</h1> -->
-	<!-- <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p> -->
 <nav class="stroke">
 	<ul>
   <li>
@@ -55,9 +40,7 @@ router.start();
     <li>
   <a href="/about">About</a>
   </li>
-      <li>
-  <a href="/products">Products</a>
-  </li>
+
   </ul>
 </nav>
 
